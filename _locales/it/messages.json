@@ -1,0 +1,57 @@
+{
+
+  "des" : {
+
+    "message" : "Condivide le informazioni di Buffer con Telegram Bot"
+
+  }
+
+  ,"label_token" : {
+
+    "message" : "Telegram Token"
+
+  }
+
+  ,"placeholder_token" : {
+
+    "message" : "Richiesto da Telegram"
+
+  }
+
+  ,"label_chat_id" : {
+
+    "message" : "Chat ID"
+
+  }
+
+  ,"placeholder_chat_id" : {
+
+    "message" : "@cTraderGuru"
+
+  }
+
+  ,"button_save" : {
+
+    "message" : "Salva"
+
+  }
+
+  ,"button_save_saving" : {
+
+    "message" : "Salvando ..."
+
+  }
+
+  ,"button_save_saved" : {
+
+    "message" : "Salvato"
+
+  }
+
+  ,"telegram_not_ok" : {
+
+    "message" : "Buffer To Telegram : la risposta da Telegram è 'ok : false', controlla il log dell'estensione o contatta il supporto"
+
+  }
+
+}
