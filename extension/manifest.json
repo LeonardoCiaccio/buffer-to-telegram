@@ -6,7 +6,7 @@
 
 	,"homepage_url"				: "https://github.com/LeonardoCiaccio/buffer-to-telegram"
 
-	,"version" 						: "1.0.0"
+	,"version" 						: "1.0.1"
 
 	,"name" 							: "Buffer To Telegram"
 
@@ -43,12 +43,15 @@
 		]
 
 		,"persistent": true
-
 	}
 
 	,"permissions" : [
 
 		"webRequest"
+
+		,"*://buffer.com/api/1/updates/create.json"
+
+		,"*://api.telegram.org/"
 
 		,"*://*.buffer.com/"
 
