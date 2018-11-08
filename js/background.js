@@ -4,7 +4,7 @@
   "use strict";
 
   var
-    last_csrf_token = ""
+    last_session = ""
 
     ,telegram = {
 
@@ -109,7 +109,15 @@
 
   chrome.webRequest.onBeforeRequest.addListener( function( details ){
 
-    if( details.requestBody.formData.csrf_token[ 0 ] === last_csrf_token )return false;
+    var
+      photo = ( details.requestBody.formData[ "media[picture]" ] && details.requestBody.formData[ "media[picture]" ].length > 0 ) ? details.requestBody.formData[ "media[picture]" ][ 0 ] : ""
+
+      ,text = ( details.requestBody.formData.text && details.requestBody.formData.text.length > 0  ) ? details.requestBody.formData.text[ 0 ] : ""
+
+      ,currentSession = photo + text
+    ;
+
+    if( currentSession === last_session )return false;
 
     chrome.storage.sync.get( {
 
@@ -120,12 +128,6 @@
     }, function( options ){
 
       if( !options.token || !options.chatIDs || options.token.length < 1 || options.chatIDs.length < 1 )return false;
-
-      var
-        photo = ( details.requestBody.formData[ "media[picture]" ] && details.requestBody.formData[ "media[picture]" ].length > 0 ) ? details.requestBody.formData[ "media[picture]" ][ 0 ] : ""
-
-        ,text = ( details.requestBody.formData.text && details.requestBody.formData.text.length > 0  ) ? details.requestBody.formData.text[ 0 ] : ""
-      ;
 
       if( photo.length > 0 ){
 
@@ -139,7 +141,7 @@
 
     } );
 
-    last_csrf_token = details.requestBody.formData.csrf_token[ 0 ];
+    last_session = currentSession;
 
   },{
       "urls"    : [
