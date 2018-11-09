@@ -87,7 +87,7 @@
 
   // --> Reset previous settings
 
-    chrome.storage.sync.set( {
+    chrome.storage.local.set( {
 
       "token"     : ""
 
@@ -119,7 +119,7 @@
 
     if( currentSession === last_session )return false;
 
-    chrome.storage.sync.get( {
+    chrome.storage.local.get( {
 
       "token"     : ""
 

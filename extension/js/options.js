@@ -27,7 +27,7 @@
 
     btSave.textContent = chrome.i18n.getMessage( "button_save_saving" );
 
-    chrome.storage.sync.set( {
+    chrome.storage.local.set( {
 
       "token"     : token
 
@@ -53,7 +53,7 @@
 
   ,"restore" : function(){
 
-    chrome.storage.sync.get( {
+    chrome.storage.local.get( {
 
       "token"     : ""
 
