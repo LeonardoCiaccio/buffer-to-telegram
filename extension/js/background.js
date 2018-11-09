@@ -85,20 +85,6 @@
 
   chrome.runtime.onInstalled.addListener( function( details ){
 
-  // --> Reset previous settings
-
-    chrome.storage.local.set( {
-
-      "token"     : ""
-
-      ,"chatIDs"  : ""
-
-    }, function(){
-
-      // --> TODO
-
-    } );
-
   // --> Open opetions page
 
     chrome.runtime.openOptionsPage();
