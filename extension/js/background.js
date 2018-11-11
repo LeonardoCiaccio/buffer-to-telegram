@@ -4,7 +4,9 @@
   "use strict";
 
   var
-    last_session = ""
+    sended = false
+
+    ,resetSended = 5000
 
     ,telegram = {
 
@@ -103,7 +105,11 @@
       ,currentSession = photo + text
     ;
 
-    if( currentSession === last_session )return false;
+// --> Only first item
+
+    if( sended === true )return false;
+
+    sended = true;
 
     chrome.storage.local.get( {
 
@@ -127,7 +133,13 @@
 
     } );
 
-    last_session = currentSession;
+// --> Reset flag, it's important because have no token or ref for every post, send only one time and first item
+
+    setTimeout( function(){
+
+      sended = false;
+
+    }, resetSended );
 
   },{
       "urls"    : [
