@@ -10,7 +10,7 @@
 
     ,telegram = {
 
-      "endPoint" : "https://api.telegram.org/"
+      "endPoint" : "https://api.telegram.org/bot"
 
       ,sendMessage : function( token, chatIDs, text ){
 
