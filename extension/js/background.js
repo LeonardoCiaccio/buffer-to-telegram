@@ -28,7 +28,7 @@
 
             if( !telegramResponse.ok ){
 
-              alert( chrome.i18n.getMessage( "telegram_not_ok" ) );
+              // --> alert( chrome.i18n.getMessage( "telegram_not_ok" ) );
 
               console.log( this );
 
@@ -62,7 +62,7 @@
 
             if( !telegramResponse.ok ){
 
-              alert( chrome.i18n.getMessage( "telegram_not_ok" ) );
+              // --> alert( chrome.i18n.getMessage( "telegram_not_ok" ) );
 
               console.log( this );
 

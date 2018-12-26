@@ -2,21 +2,21 @@
 
 	"manifest_version"		: 2
 
-	,"author"							: "Leonardo Ciaccio"
+	,"author"				: "Leonardo Ciaccio"
 
-	,"homepage_url"				: "https://github.com/LeonardoCiaccio/buffer-to-telegram"
+	,"homepage_url"			: "https://github.com/LeonardoCiaccio/buffer-to-telegram"
 
-	,"version" 						: "1.0.7"
+	,"version" 				: "1.0.8"
 
-	,"name" 							: "Buffer To Telegram"
+	,"name" 				: "Buffer To Telegram"
 
 	,"default_locale" 		: "en"
 
-	,"description" 				: "__MSG_des__"
+	,"description" 			: "__MSG_des__"
 
-	,"options_ui"					: {
+	,"options_ui"			: {
 
-    "page"					: "options.html"
+    	"page"			: "options.html"
 
 		,"open_in_tab"	: false
 
@@ -24,13 +24,13 @@
 
 	,"icons" : {
 
-	  "16"		: "img/icon.16.png"
+	  	"16"		: "img/icon.16.png"
 
 		,"24"		: "img/icon.24.png"
 
 		,"48"		: "img/icon.48.png"
 
-		,"128"	: "img/icon.128.png"
+		,"128"		: "img/icon.128.png"
 
 	}
 
