@@ -80,6 +80,39 @@
       }
 
     }
+
+    ,arrayBufferToData = { // <-- Briliant solution for strange chars conversion https://github.com/eelokets/array-buffer-to-data/blob/master/src/native/array-buffer-to-data.js
+        toBase64: function (arrayBuffer) {
+          var binary = '';
+          var bytes = new Uint8Array(arrayBuffer);
+          var len = bytes.byteLength;
+          for (var i = 0; i < len; i++) {
+            binary += String.fromCharCode(bytes[i]);
+          }
+          return window.btoa(binary);
+        },
+    
+        toString: function (arrayBuffer) {
+          try {
+            var base64 = this.toBase64(arrayBuffer);
+    
+            return decodeURIComponent(escape(window.atob(base64)));
+          } catch (e) {
+            console.warn('Can not be converted to String');
+            return false;
+          }
+        },
+    
+        toJSON: function (arrayBuffer) {
+          try {
+            var string = this.toString(arrayBuffer);
+            return JSON.parse(string);
+          } catch (e) {
+            console.warn('Can not be converted to JSON');
+            return false;
+          }
+        }
+    }
   ;
 
 // --> When installed reset params and open settings
@@ -182,10 +215,10 @@
       var 
           mybytes = new Uint8Array( details.requestBody.raw[ 0 ].bytes )
 
-          ,params = decodeURIComponent( String.fromCharCode.apply( null, mybytes ) )
+          ,params = arrayBufferToData.toJSON(details.requestBody.raw[ 0 ].bytes)
       ;
-      
-      args = JSON.parse( JSON.parse( params ).args ).args;
+
+      args = JSON.parse( params.args ).args;
       
       text = args.text || "";
       photo = (args.media && args.media.photo) ? args.media.photo : "";
