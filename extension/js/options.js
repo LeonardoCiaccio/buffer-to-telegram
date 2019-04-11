@@ -16,6 +16,10 @@
 
       ,chatIDs  = document.getElementById( "chat_id" ).value
 
+      ,rCleanChar  = document.getElementById( "r_clean_char" ).value
+
+      ,filterChar  = document.getElementById( "filter_char" ).value
+
       ,btSave   = document.getElementById( "save" )
     ;
 
@@ -25,29 +29,17 @@
     token = token.trim();
     chatIDs = chatIDs.trim();
 
-    btSave.textContent = chrome.i18n.getMessage( "button_save_saving" );
-
     chrome.storage.local.set( {
 
       "token"     : token
 
       ,"chatIDs"  : chatIDs
 
-    }, function(){
+      ,"rCleanChar" : rCleanChar
 
-      setTimeout( function(){
+      ,"filterChar" : filterChar
 
-        btSave.textContent = chrome.i18n.getMessage( "button_save_saved" );
-
-        setTimeout( function(){
-
-          btSave.textContent = chrome.i18n.getMessage( "button_save" );
-
-        }, 750 );
-
-      }, 750 );
-
-    } );
+    }, function(){} );
 
   }
 
@@ -59,11 +51,19 @@
 
       ,"chatIDs"  : ""
 
+      ,"rCleanChar" : ""
+
+      ,"filterChar" : ""
+
     }, function( options ){
 
       document.getElementById( "token" ).value = options.token;
 
       document.getElementById( "chat_id" ).value = options.chatIDs;
+
+      document.getElementById( "r_clean_char" ).value = options.rCleanChar;
+
+      document.getElementById( "filter_char" ).value = options.filterChar;
 
     } );
 

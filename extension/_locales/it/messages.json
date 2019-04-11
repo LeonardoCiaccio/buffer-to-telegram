@@ -8,7 +8,7 @@
 
   ,"label_token" : {
 
-    "message" : "Telegram Token"
+    "message" : "* Telegram Token"
 
   }
 
@@ -20,7 +20,7 @@
 
   ,"label_chat_id" : {
 
-    "message" : "Chat ID"
+    "message" : "* Chat ID"
 
   }
 
@@ -36,21 +36,21 @@
 
   }
 
-  ,"button_save_saving" : {
-
-    "message" : "Salvando ..."
-
-  }
-
-  ,"button_save_saved" : {
-
-    "message" : "Salvato"
-
-  }
-
   ,"telegram_not_ok" : {
 
     "message" : "Buffer To Telegram : la risposta da Telegram è 'ok : false', controlla il log dell'estensione o contatta il supporto"
+
+  }
+
+  ,"label_r_clean_char" : {
+
+    "message" : "Carattere che separa il contenuto da quello nascosto"
+
+  }
+
+  ,"label_filter_char" : {
+
+    "message" : "Parole o frasi che verranno filtrate, separate da virgola"
 
   }
 

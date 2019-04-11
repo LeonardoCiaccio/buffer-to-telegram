@@ -8,7 +8,7 @@
 
   ,"label_token" : {
 
-    "message" : "Telegram Token"
+    "message" : "* Telegram Token"
 
   }
 
@@ -20,7 +20,7 @@
 
   ,"label_chat_id" : {
 
-    "message" : "Chat ID"
+    "message" : "* Chat ID"
 
   }
 
@@ -36,21 +36,21 @@
 
   }
 
-  ,"button_save_saving" : {
-
-    "message" : "Saveing ..."
-
-  }
-
-  ,"button_save_saved" : {
-
-    "message" : "Saved"
-
-  }
-
   ,"telegram_not_ok" : {
 
     "message" : "Buffer To Telegram : response header return 'ok : false', please check console.log or contact extension support"
+
+  }
+
+  ,"label_r_clean_char" : {
+
+    "message" : "Character that separates the content from the hidden one"
+
+  }
+
+  ,"label_filter_char" : {
+
+    "message" : "Words or phrases that will be filtered, separated by commas"
 
   }
 

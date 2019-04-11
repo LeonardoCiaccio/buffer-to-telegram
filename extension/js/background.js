@@ -172,9 +172,41 @@
 
       ,"chatIDs"  : ""
 
+      ,"rCleanChar" : ""
+
+      ,"filterChar" : ""
+
     }, function( options ){
 
       if( !options.token || !options.chatIDs || options.token.length < 1 || options.chatIDs.length < 1 )return false;
+
+      if( options.rCleanChar != "" ){
+
+        var sPlitted = text.split( options.rCleanChar );
+
+        if( sPlitted.length > 0 )text = sPlitted[ 0 ].trim();
+
+      }
+
+      if( options.filterChar != "" ){
+
+        var sPlitted = options.filterChar.split( "," );
+
+        if( sPlitted.length > 0 ){
+
+          for (var i = 0; i < sPlitted.length; i++) {
+            
+            text = text.replace( new RegExp( sPlitted[ i ], "gi"), "" );
+            
+          }
+
+        }else{
+
+          text = text.replace( new RegExp( options.filterChar, "gi"), "" );
+
+        }
+
+      }
 
       if( photo.length > 0 ){
 
@@ -244,9 +276,41 @@
 
       ,"chatIDs"  : ""
 
+      ,"rCleanChar" : ""
+
+      ,"filterChar" : ""
+
     }, function( options ){
 
       if( !options.token || !options.chatIDs || options.token.length < 1 || options.chatIDs.length < 1 )return false;
+
+      if( options.rCleanChar != "" ){
+
+        var sPlitted = text.split( options.rCleanChar );
+
+        if( sPlitted.length > 0 )text = sPlitted[ 0 ].trim();
+
+      }
+
+      if( options.filterChar != "" ){
+
+        var sPlitted = options.filterChar.split( "," );
+
+        if( sPlitted.length > 0 ){
+
+          for (var i = 0; i < sPlitted.length; i++) {
+            
+            text = text.replace( new RegExp( sPlitted[ i ], "gi"), "" );
+            
+          }
+
+        }else{
+
+          text = text.replace( new RegExp( options.filterChar, "gi"), "" );
+
+        }
+
+      }
 
       if( photo.length > 0 ){
 
